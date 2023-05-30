@@ -1,0 +1,4 @@
+1. Convert to reusable comp inputs(specially Input)
+2. set input min max restrict
+3. unique clash less
+4. 
