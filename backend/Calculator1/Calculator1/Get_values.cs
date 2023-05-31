@@ -17,8 +17,8 @@ namespace Calculator1
         protected static int retirement_period, retirement_age = 65;
         protected static double annual_return;
         protected static double maturity;
-        protected static int initial_value = 1234;
-        protected static double c = 0,x=0,y=0,z=0;
+        protected static int initial_balance;
+        protected static double c = 0,x=0,y=0;
         public void set_age(int age)
         {
             current_age = age;
@@ -71,6 +71,15 @@ namespace Calculator1
         public double get_annual_return()
         {
             return annual_return;
+        }
+
+        public void set_initial_balance(int ib)
+        {
+            initial_balance = ib;
+        }
+        public double get_initial_balance()
+        {
+            return initial_balance;
         }
     }
 }
