@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import InputForm from './components/inputs';
+import InputForm from './Screens/form.js';
 function App() {
   return (
     <div className="App">

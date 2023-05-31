@@ -1,11 +1,15 @@
 import React from 'react';
-import '../UI/input.css';
+import '../UI/inpcomp.css';
+
+
 const Input = ({
   type,
   name,
   label,
   value,
   onChange,
+  min,
+  max,
   placeholder,
   error,
 }) => {
@@ -13,11 +17,16 @@ const Input = ({
     <div>
       <label htmlFor={name}>{label}</label>
       <input
+      // id='inp'
         type={type}
         name={name}
+        id={name}
         value={value}
         onChange={onChange}
-        placeholder={placeholder}
+        min={min}
+        max={max}
+        className={name}
+        // placeholder={placeholder}
       />
       {error && <div className="error">{error}</div>}
     </div>

@@ -1,4 +1,10 @@
-1. Convert to reusable comp inputs(specially Input)
+Min,max only age and salary not restricted
+Display Output
+Send Request
+
+
+
+1. Convert to reusable comp inputs(specially Input)  -done
 2. set input min max restrict
-3. unique clash less
+3. unique clash less= not sure
 4. 
