@@ -47,14 +47,22 @@ class Calculate : Get_values
         
         Console.Write("Annual Contribution in % : ");
 
-        var obj2  = new Calculate();
+        var obj2 = new Calculate();
         obj2.set_annual(int.Parse(Console.ReadLine()));
 
-        a = (annual_contribution * annual_salary) / 100;
-        Console.WriteLine("Annual Contribution in Dollars : " + a);
+        if (annual_contribution > 0 && annual_contribution <100)
+        {
+            a = (annual_contribution * annual_salary) / 100;
+            Console.WriteLine("Annual Contribution in Dollars : " + a);
 
-        var ec = new Calculate();
-        ec.Employer_contribution();
+            var ec = new Calculate();
+            ec.Employer_contribution();
+        }
+
+        else
+        {
+            Console.WriteLine("Error, Enter a Valid Range");
+        }
     }
 
     public void Employer_contribution()
@@ -65,31 +73,46 @@ class Calculate : Get_values
         var obj3 = new Calculate();
         obj3.set_employer(int.Parse(Console.ReadLine()));
 
-        b = (employer_contribution * a) / 100;
-        Console.WriteLine("Employer Contribution in Dollars : " + b);
+        if (employer_contribution > 0 && employer_contribution < 100)
+        {
+            b = (employer_contribution * a) / 100;
+            Console.WriteLine("Employer Contribution in Dollars : " + b);
 
-        var ml = new Calculate();
-        ml.Maximum_limit();
+            var ml = new Calculate();
+            ml.Maximum_limit();
+        }
+        else
+        {
+            Console.WriteLine("Error, Enter a Valid Range");
+        }           
     }
 
     public void Maximum_limit()
     {
-        Console.Write("Maximum Limit : ");
+        Console.Write("Maximum Limit in % : ");
 
         var obj4 = new Calculate();
         obj4.set_maximum(int.Parse(Console.ReadLine()));
 
-        employer_match = (annual_salary * maximum_limit) / 100;
-        Console.WriteLine("Employer Match : " + employer_match);
+        if (maximum_limit > 0 && maximum_limit < 100)
+        {
+            employer_match = (annual_salary * maximum_limit) / 100;
+            Console.WriteLine("Employer Match : " + employer_match);
 
-        var am = new Calculate();
-        am.Amount();
+            var am = new Calculate();
+            am.Amount();
+        }
+        else
+        {
+            Console.WriteLine("Error, Enter a Valid Range");
+        }
     }
 
     public void Amount()
     {
         //a = annual_contribution in dollars
         //b = employer_contribution in dollars
+
         if(b < employer_match)
         {
             amount = a + b;
@@ -100,6 +123,7 @@ class Calculate : Get_values
             amount = a + employer_match;
             Console.WriteLine("Amount Savings : " + amount);
         }
+
         var ann = new Calculate();
         ann.Annual_return();
     }
@@ -131,17 +155,19 @@ class Calculate : Get_values
 
     public void Maturity()
     {
-        x = (initial_value * Math.Pow((1 + (annual_return / 100)), retirement_period))  ;
-        //Console.WriteLine(x);
+        Console.Write("Initial Balance : ");
 
+        var obj7 = new Calculate();
+        obj7.set_initial_balance(int.Parse(Console.ReadLine()));
+
+
+        x = (initial_balance * Math.Pow((1 + (annual_return / 100)), retirement_period))  ;
+     
         y = amount * ((Math.Pow((1 + (annual_return / 100)), retirement_period) - 1) * (1 + (annual_return / 100))) 
             / (annual_return / 100) ;
-        //Console.WriteLine(y);
-
+        
         maturity = x + y;
 
         Console.WriteLine(maturity);
     }
-    
-
 }
