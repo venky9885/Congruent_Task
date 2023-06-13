@@ -1,4 +1,4 @@
-import React from 'react';
+// import React, { useEffect } from 'react';
 import '../slider/slide.css';
 // import '..../UI/inpcomp.css';
 
@@ -10,13 +10,20 @@ const InputSlider = ({
   onChange,
   error,
 }) => {
+
+  // useEffect(() => {
+  //   console.log("Mouted");
+  
+  //   return ;
+  // }, [])
+  
   return (
     <div >
       <label htmlFor={name}>{label}</label>
-      <div class="slidecontainer">
+      <div className="slidecontainer">
       
       <input
-      // id='inp'
+      // id={name}
         type="range"
         name={name}
         id={name}
@@ -27,7 +34,8 @@ const InputSlider = ({
         className={"slider"}
         // placeholder={placeholder}
       />
-      {/* <p id="rangeValue">10</p> */}
+      {/* <div>5</div> */}
+      <p id="rangeValue" className="rVal">{value}</p>
       </div>
       {/* {error && <div className="error">{error}</div>} */}
     </div>

@@ -1,0 +1,10 @@
+.rounded-7{
+  /* borderRadius: 18px ; */
+  border-radius: 16px !important;
+  /* border: 30px;
+  border-radius: 20%; */
+  /* 30px 30px 30px 30px; */
+        /* color:grey; */
+        box-shadow: 1px 2px 9px #aacaf4;
+        margin: 20px;
+}

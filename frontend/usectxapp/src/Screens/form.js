@@ -6,7 +6,7 @@ import './form.css';
 import { Validators } from '../helpers/valid';
 import InputField from '../UI/inpcomp';
 import InputSlider from '../UI/slider/slide';
-
+// import Req from '../api/sendapireq';
 function InputForm(params) {
     // const age = React.createRef();
     // const [inputValue, setInputValue] = useState({ age: "", price: "" });
@@ -93,6 +93,7 @@ function InputForm(params) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        
         // console.log(event.target)
         
         if(Validators.number(ages).error){
@@ -146,7 +147,7 @@ function InputForm(params) {
             error={curberror}
             onChange={handleagechange}
           />
-           <InputSlider
+          <InputSlider
             // type="number"
             value={contr}
             placeholder="Contribution Salary"
@@ -155,6 +156,7 @@ function InputForm(params) {
             // error={contrerror}
             onChange={handleagechange}
           />
+           
           <InputSlider
             // type="number"
             value={empmatch}
@@ -173,7 +175,7 @@ function InputForm(params) {
             // error={empmatlimerror}
             onChange={handleagechange}
           />
-          {/* InputSlider */}
+         
           <InputSlider
             // type="number"
             value={expanret}
@@ -186,6 +188,7 @@ function InputForm(params) {
           
           
             <button type='submit' className='btncal' onClick={handleSubmit}>Calculate</button>
+            {/* <Req/> */}
         </form>
     </div>
     );
